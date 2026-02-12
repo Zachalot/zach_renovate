@@ -1,0 +1,17 @@
+name: Renovate
+on:
+  schedule:
+    - cron: '0 3 * * *' # Runs daily at 3 AM
+  workflow_dispatch:     # Adds the manual "Run workflow" button
+
+jobs:
+  renovate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4 # Brings your config.js into the runner
+      - name: Self-hosted Renovate
+        uses: renovatebot/github-action@v41.0.1 # The official Renovate "engine"
+        with:
+          configurationFile: config.js
+          token: ${{ secrets.RENOVATE_TOKEN }} # Your PAT stored in GitHub Secrets
