@@ -11,7 +11,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4 # Brings your config.js into the runner
       - name: Self-hosted Renovate
-        uses: renovatebot/github-action@v41.0.1 # The official Renovate "engine"
+        uses: renovatebot/github-action@44f24283a60f64273f1294932f16ba61193cccca # v46.1.0 # The official Renovate "engine"
         with:
           configurationFile: config.js
           token: ${{ secrets.RENOVATE_TOKEN }} # Your PAT stored in GitHub Secrets
