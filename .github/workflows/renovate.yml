@@ -9,9 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4 # Brings your config.js into the runner
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4 # Brings your config.js into the runner
       - name: Self-hosted Renovate
-        uses: renovatebot/github-action@8ac70de2fe55752c573155866e30735411e3b61c # v41.0.22 # The official Renovate "engine"
+        uses: renovatebot/github-action@d65ef9e20512193cc070238b49c3873a361cd50c # v46.1.1 # The official Renovate "engine"
         with:
           configurationFile: config.js
           token: ${{ secrets.RENOVATE_TOKEN }} # Your PAT stored in GitHub Secrets
